@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Aemni | Portfolio & Projects</title>
+    <title>Dev Aemni | Glass Portfolio</title>
     
+    <!-- Google Fonts: Chivo & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,700;0,900;1,900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <!-- Google AdSense Main Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5871246629973328" crossorigin="anonymous"></script>
 
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --border-color: #30363d;
-            --text-color: #c9d1d9;
-            --heading-color: #58a6ff;
-            --accent-color: #1f6feb;
-            --meta-color: #8b949e;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-glow: rgba(0, 240, 255, 0.2);
+            --accent-cyan: #00f0ff;
+            --accent-purple: #7000ff;
+            --accent-pink: #ff007f;
+            --text-main: #f0f6fc;
+            --text-sub: #8b949e;
+            --font-title: 'Chivo', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         * {
@@ -26,11 +34,24 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: var(--font-body);
+            background-color: #050508;
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
             padding: 20px;
+        }
+
+        /* Animated Particle Canvas Background */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
 
         .container {
@@ -38,80 +59,142 @@
             margin: 0 auto;
         }
 
+        /* Glass Header Frame */
         header {
             text-align: center;
-            padding: 40px 0 20px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 40px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                        inset 0 0 15px rgba(255, 255, 255, 0.05);
             margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,240,255,0.1) 0%, transparent 70%);
+            animation: pulseGlow 8s infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.2); opacity: 1; }
         }
 
         header h1 {
-            color: var(--heading-color);
-            font-size: 2.5rem;
+            font-family: var(--font-title);
+            font-weight: 900;
+            font-size: 3.2rem;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 50%, var(--accent-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
         }
 
         header p {
-            color: var(--meta-color);
+            color: var(--text-sub);
             font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
+        /* Ad Box Glass Container */
         .ad-box {
             margin: 30px 0;
             padding: 15px;
-            background: var(--card-bg);
-            border: 1px dashed var(--border-color);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px dashed var(--glass-border);
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .section-title {
-            color: var(--heading-color);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--glass-border), transparent);
+        }
+
+        /* Glass Grid & Cards */
         .repo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 22px;
         }
 
         .repo-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
         }
 
         .repo-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--heading-color);
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(0, 240, 255, 0.5);
+            box-shadow: 0 12px 40px rgba(0, 240, 255, 0.25);
         }
 
         .repo-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 8px;
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .repo-title a {
-            color: var(--heading-color);
+            color: var(--text-main);
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        .repo-title a:hover {
-            text-decoration: underline;
+        .repo-card:hover .repo-title a {
+            color: var(--accent-cyan);
         }
 
         .repo-desc {
-            color: var(--meta-color);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            color: var(--text-sub);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
             flex-grow: 1;
         }
 
@@ -119,53 +202,62 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
-            color: var(--meta-color);
+            font-size: 0.82rem;
+            color: var(--text-sub);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 14px;
         }
 
         .repo-lang {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
+            font-weight: 600;
+            color: var(--accent-cyan);
         }
 
         .lang-dot {
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-color);
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-cyan);
             border-radius: 50%;
-            display: inline-block;
+            box-shadow: 0 0 8px var(--accent-cyan);
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--meta-color);
+            margin-top: 60px;
+            padding: 30px 0;
+            color: var(--text-sub);
             font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
         }
 
         #loading {
             text-align: center;
-            color: var(--meta-color);
-            font-size: 1.1rem;
+            color: var(--accent-cyan);
+            font-family: var(--font-title);
+            font-size: 1.2rem;
             grid-column: 1 / -1;
+            padding: 40px 0;
         }
     </style>
 </head>
 <body>
 
+    <!-- Particle Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <div class="container">
         <!-- Header Profile -->
         <header>
             <h1>Dev Aemni</h1>
-            <p>Developer Portfolio & GitHub Projects</p>
+            <p>Developer Portfolio & GitHub Showcase</p>
         </header>
 
         <!-- Google AdSense Unit (displayad01) -->
         <div class="ad-box">
-            <p style="font-size:12px; color:var(--meta-color); margin-bottom: 8px;">Advertisement</p>
+            <p style="font-size:11px; color:var(--text-sub); margin-bottom: 8px; letter-spacing: 1px;">ADVERTISEMENT</p>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5871246629973328"
@@ -178,17 +270,85 @@
         </div>
 
         <!-- Repositories Section -->
-        <h2 class="section-title">Projects & Repositories</h2>
+        <h2 class="section-title">Repositories</h2>
         <div class="repo-grid" id="repo-container">
-            <div id="loading">Loading repositories from GitHub...</div>
+            <div id="loading">⚡ Loading GitHub Repositories...</div>
         </div>
 
         <footer>
-            <p>&copy; 2026 Dev Aemni. Powered by GitHub Pages.</p>
+            <p>&copy; 2026 Dev Aemni • Built with Glassmorphism</p>
         </footer>
     </div>
 
-    <!-- Script to Fetch Repositories Automatically -->
+    <!-- Interactive Colorful Particles Script -->
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        const particleCount = 45;
+        const colors = ['#00f0ff', '#7000ff', '#ff007f', '#ffffff'];
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+
+    <!-- Fetch GitHub Repositories -->
     <script>
         const username = 'dev-aemni';
         const repoContainer = document.getElementById('repo-container');
@@ -199,15 +359,14 @@
                 if (!response.ok) throw new Error('Failed to fetch repositories');
                 
                 const repos = await response.json();
-                repoContainer.innerHTML = ''; // Clear loading indicator
+                repoContainer.innerHTML = '';
 
                 if (repos.length === 0) {
-                    repoContainer.innerHTML = '<p>No public repositories found.</p>';
+                    repoContainer.innerHTML = '<p style="color:var(--text-sub); grid-column:1/-1; text-align:center;">No public repositories found.</p>';
                     return;
                 }
 
                 repos.forEach(repo => {
-                    // Skip fork repos if you only want original work (optional)
                     if (repo.fork) return;
 
                     const card = document.createElement('div');
@@ -233,7 +392,7 @@
                     repoContainer.appendChild(card);
                 });
             } catch (error) {
-                repoContainer.innerHTML = `<p style="color: #f85149;">Error loading projects: ${error.message}</p>`;
+                repoContainer.innerHTML = `<p style="color: #ff007f; grid-column: 1/-1; text-align: center;">Error loading projects: ${error.message}</p>`;
             }
         }
 
