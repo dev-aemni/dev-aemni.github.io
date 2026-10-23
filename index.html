@@ -85,7 +85,6 @@
             font-size: 1.15rem;
         }
 
-        /* Content Card Section for AdSense Crawlers */
         .content-card {
             background: var(--glass-bg);
             backdrop-filter: blur(14px);
@@ -181,19 +180,29 @@
             padding-top: 10px;
         }
 
+        /* Clean & Simple Footer */
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
             padding: 25px 0;
             color: var(--text-sub);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             border-top: 1px solid var(--glass-border);
         }
 
-        footer a {
-            color: var(--accent-cyan);
+        footer nav {
+            margin-top: 10px;
+        }
+
+        footer nav a {
+            color: var(--text-sub);
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 12px;
+            transition: color 0.2s ease;
+        }
+
+        footer nav a:hover {
+            color: var(--accent-cyan);
         }
 
         #loading {
@@ -217,7 +226,7 @@
             <p>Full-Stack Software Development & Open Source Projects</p>
         </header>
 
-        <!-- Static About Section for AdSense Crawlers -->
+        <!-- Static About Section -->
         <div class="content-card">
             <h2>About The Developer</h2>
             <p>Welcome to Dev Aemni! I am an independent developer specializing in mobile and web development, application tooling, and command-line system scripts. This portfolio serves as an open hub documenting my software development journey, custom libraries, utilities, and continuous engineering experimentation.</p>
@@ -238,7 +247,7 @@
             </script>
         </div>
 
-        <!-- Static Featured Technical Overview Section -->
+        <!-- Static Technical Overview Section -->
         <div class="content-card">
             <h2>Core Expertise & Focus Areas</h2>
             <p>• <strong>Low-Level Application Scripting:</strong> Building performant C tools and shell utilities tailored for Android environments via Termux.</p>
@@ -252,15 +261,13 @@
             <div id="loading">⚡ Loading Repositories...</div>
         </div>
 
-        <!-- Privacy Policy Section for Compliance -->
-        <div class="content-card" style="margin-top: 40px;" id="privacy">
-            <h2>Privacy Policy</h2>
-            <p>Dev Aemni respects your privacy. This site uses third-party vendor services, including Google AdSense, which utilize cookies to serve ads based on a user's prior visits to this or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to this site and/or other sites on the Internet.</p>
-            <p>Users may opt out of personalized advertising by visiting Google's <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--accent-cyan);">Ads Settings</a> page.</p>
-        </div>
-
+        <!-- Simple Clean Footer -->
         <footer>
-            <p>&copy; 2026 Dev Aemni • Built with Glassmorphism</p>
+            <p>&copy; 2026 Dev Aemni. All rights reserved.</p>
+            <nav>
+                <a href="/">Home</a> • 
+                <a href="/privacy-policy/">Privacy Policy</a>
+            </nav>
         </footer>
     </div>
 
