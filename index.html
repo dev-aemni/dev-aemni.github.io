@@ -3,191 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Aemni | Software Developer & Open Source Portfolio</title>
+    <title>Dev Aemni | Software Developer Portfolio</title>
     
-    <!-- Google Fonts: Chewy & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
     <!-- Google AdSense Main Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5871246629973328" crossorigin="anonymous"></script>
 
     <style>
-        :root {
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.18);
-            --accent-cyan: #00f0ff;
-            --accent-purple: #7000ff;
-            --accent-pink: #ff007f;
-            --text-main: #f0f6fc;
-            --text-sub: #a3b1c2;
-            --font-title: 'Chewy', cursive;
-            --font-body: 'Inter', sans-serif;
-        }
-
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            outline: none;
         }
 
         body {
-            font-family: var(--font-body);
-            background-color: #030308;
-            color: var(--text-main);
+            background-color: #ecf0f3;
+            color: #2d3748;
             min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-            padding: 20px;
+            padding: 30px 20px;
             line-height: 1.6;
         }
 
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
         .container {
-            max-width: 950px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
+        /* Neumorphic Header Card */
         header {
+            background-color: #ecf0f3;
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 9px 9px 18px #d1d9e6, -9px -9px 18px #ffffff;
             text-align: center;
-            padding: 45px 20px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 28px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         header h1 {
-            font-family: var(--font-title);
-            font-size: 3.8rem;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 50%, var(--accent-pink) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            color: #1a202c;
+            font-weight: 700;
+            letter-spacing: -0.5px;
             margin-bottom: 8px;
         }
 
         header p {
-            color: var(--text-sub);
-            font-size: 1.15rem;
+            color: #4a5568;
+            font-size: 1.05rem;
+            font-weight: 500;
         }
 
-        .content-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 28px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        /* Neumorphic Card Component */
+        .neu-card {
+            background-color: #ecf0f3;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 9px 9px 18px #d1d9e6, -9px -9px 18px #ffffff;
+            margin-bottom: 35px;
         }
 
-        .content-card h2 {
-            font-family: var(--font-title);
-            font-size: 2.2rem;
-            color: var(--accent-cyan);
+        .neu-card h2 {
+            font-size: 1.6rem;
+            color: #1a202c;
             margin-bottom: 12px;
-            letter-spacing: 1px;
+            font-weight: 600;
         }
 
-        .content-card p {
-            color: var(--text-main);
-            margin-bottom: 14px;
+        .neu-card p {
+            color: #4a5568;
             font-size: 1rem;
+            margin-bottom: 12px;
         }
 
+        .neu-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Neumorphic Ad Slot Container (Inset Shadow) */
         .ad-box {
-            margin: 30px 0;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px dashed var(--glass-border);
-            border-radius: 16px;
+            background-color: #ecf0f3;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff;
             text-align: center;
+            margin: 35px 0;
         }
 
         .section-title {
-            font-family: var(--font-title);
-            font-size: 2.4rem;
-            color: var(--text-main);
-            margin: 30px 0 20px;
-            letter-spacing: 1px;
+            font-size: 1.8rem;
+            color: #1a202c;
+            margin: 35px 0 20px;
+            font-weight: 600;
         }
 
+        /* Neumorphic Repositories Grid */
         .repo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
         }
 
         .repo-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid var(--glass-border);
+            background-color: #ecf0f3;
+            padding: 25px;
             border-radius: 20px;
-            padding: 22px;
+            box-shadow: 7px 7px 14px #d1d9e6, -7px -7px 14px #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .repo-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent-cyan);
+            box-shadow: 3px 3px 6px #d1d9e6, -3px -3px 6px #ffffff;
+            transform: translateY(2px);
         }
 
         .repo-title {
-            font-family: var(--font-title);
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .repo-title a {
-            color: var(--text-main);
+            color: #2b6cb0;
             text-decoration: none;
         }
 
+        .repo-title a:hover {
+            text-decoration: underline;
+        }
+
         .repo-desc {
-            color: var(--text-sub);
+            color: #4a5568;
             font-size: 0.92rem;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .repo-footer {
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #718096;
+            padding-top: 12px;
+            box-shadow: inset 0 1px 0 #d1d9e6;
         }
 
-        /* Clean & Simple Footer */
+        /* Neumorphic Footer */
         footer {
+            background-color: #ecf0f3;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 7px 7px 14px #d1d9e6, -7px -7px 14px #ffffff;
             text-align: center;
-            margin-top: 60px;
-            padding: 25px 0;
-            color: var(--text-sub);
-            font-size: 0.88rem;
-            border-top: 1px solid var(--glass-border);
+            margin-top: 50px;
+            color: #718096;
+            font-size: 0.9rem;
         }
 
         footer nav {
@@ -195,21 +168,20 @@
         }
 
         footer nav a {
-            color: var(--text-sub);
+            color: #2b6cb0;
             text-decoration: none;
-            margin: 0 12px;
-            transition: color 0.2s ease;
+            margin: 0 10px;
+            font-weight: 500;
         }
 
         footer nav a:hover {
-            color: var(--accent-cyan);
+            text-decoration: underline;
         }
 
         #loading {
             text-align: center;
-            color: var(--accent-cyan);
-            font-family: var(--font-title);
-            font-size: 1.5rem;
+            color: #718096;
+            font-size: 1.1rem;
             grid-column: 1 / -1;
             padding: 30px 0;
         }
@@ -217,25 +189,23 @@
 </head>
 <body>
 
-    <canvas id="bg-canvas"></canvas>
-
     <div class="container">
         <!-- Header -->
         <header>
             <h1>Dev Aemni</h1>
-            <p>Full-Stack Software Development & Open Source Projects</p>
+            <p>Software Developer & Open Source Engineering</p>
         </header>
 
-        <!-- Static About Section -->
-        <div class="content-card">
-            <h2>About The Developer</h2>
-            <p>Welcome to Dev Aemni! I am an independent developer specializing in mobile and web development, application tooling, and command-line system scripts. This portfolio serves as an open hub documenting my software development journey, custom libraries, utilities, and continuous engineering experimentation.</p>
-            <p>My core tech stack spans <strong>C, Kotlin, JavaScript, Node.js, and HTML5/CSS3</strong>, focusing on lightweight architecture, offline-first command utilities, and custom software UI development.</p>
+        <!-- Static Developer Bio -->
+        <div class="neu-card">
+            <h2>About</h2>
+            <p>Welcome to Dev Aemni. I am an independent developer focusing on application development, command-line system tools, and open-source utilities. This site serves as a portfolio of my work and public project repositories.</p>
+            <p>Primary technology stack includes <strong>C, Kotlin, JavaScript, Node.js, and modern Web Standards</strong> with an emphasis on performance and clean architecture.</p>
         </div>
 
-        <!-- AdSense Ad Slot Unit -->
+        <!-- AdSense Ad Unit -->
         <div class="ad-box">
-            <p style="font-size:11px; color:var(--text-sub); margin-bottom: 8px;">ADVERTISEMENT</p>
+            <p style="font-size:11px; color:#718096; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</p>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5871246629973328"
@@ -247,21 +217,21 @@
             </script>
         </div>
 
-        <!-- Static Technical Overview Section -->
-        <div class="content-card">
-            <h2>Core Expertise & Focus Areas</h2>
-            <p>• <strong>Low-Level Application Scripting:</strong> Building performant C tools and shell utilities tailored for Android environments via Termux.</p>
-            <p>• <strong>Modern Front-End Engineering:</strong> Designing single-page application utilities utilizing Glassmorphism design systems, Canvas API animations, and responsive CSS architectures.</p>
-            <p>• <strong>Open Source Tools:</strong> Maintaining public repositories that provide modular building blocks for web applications, automation, and system interaction.</p>
+        <!-- Static Expertise Section -->
+        <div class="neu-card">
+            <h2>Focus Areas</h2>
+            <p>• <strong>System Utilities:</strong> Developing compact, efficient C tools and automation scripts designed for Linux and mobile terminal environments.</p>
+            <p>• <strong>Front-End Architecture:</strong> Crafting responsive user interfaces focusing on accessibility and modern UI patterns.</p>
+            <p>• <strong>Open Source Tools:</strong> Authoring open repositories for web development, server routing, and software utilities.</p>
         </div>
 
-        <!-- Live GitHub Repositories -->
-        <h2 class="section-title">Public Repositories</h2>
+        <!-- GitHub Repositories Grid -->
+        <h2 class="section-title">Projects & Repositories</h2>
         <div class="repo-grid" id="repo-container">
-            <div id="loading">⚡ Loading Repositories...</div>
+            <div id="loading">Loading Repositories...</div>
         </div>
 
-        <!-- Simple Clean Footer -->
+        <!-- Footer -->
         <footer>
             <p>&copy; 2026 Dev Aemni. All rights reserved.</p>
             <nav>
@@ -271,74 +241,7 @@
         </footer>
     </div>
 
-    <!-- Canvas Wave Script -->
-    <script>
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const particles = [];
-        const particleCount = 60;
-
-        class WaveParticle {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.baseY = this.y;
-                this.radius = Math.random() * 4 + 2;
-                this.angle = Math.random() * Math.PI * 2;
-                this.speed = Math.random() * 0.02 + 0.005;
-                this.amplitude = Math.random() * 40 + 20;
-                this.color = `hsla(${Math.random() * 120 + 180}, 100%, 65%, ${Math.random() * 0.5 + 0.3})`;
-            }
-
-            update() {
-                this.angle += this.speed;
-                this.y = this.baseY + Math.sin(this.angle) * this.amplitude;
-                this.x += Math.cos(this.angle * 0.5) * 0.5;
-
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-            }
-
-            draw() {
-                ctx.save();
-                ctx.fillStyle = this.color;
-                ctx.shadowBlur = 12;
-                ctx.shadowColor = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new WaveParticle());
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-        animate();
-    </script>
-
-    <!-- GitHub Repositories Loader -->
+    <!-- GitHub Repositories Fetch Script -->
     <script>
         const username = 'dev-aemni';
         const repoContainer = document.getElementById('repo-container');
@@ -352,7 +255,7 @@
                 repoContainer.innerHTML = '';
 
                 if (repos.length === 0) {
-                    repoContainer.innerHTML = '<p style="color:var(--text-sub); grid-column:1/-1; text-align:center;">No public repositories found.</p>';
+                    repoContainer.innerHTML = '<p style="color:#718096; grid-column:1/-1; text-align:center;">No public repositories found.</p>';
                     return;
                 }
 
@@ -374,7 +277,7 @@
                             <div class="repo-desc">${description}</div>
                         </div>
                         <div class="repo-footer">
-                            <span>Language: ${language}</span>
+                            <span>${language}</span>
                             <span>⭐ ${stars}</span>
                         </div>
                     `;
@@ -382,7 +285,7 @@
                     repoContainer.appendChild(card);
                 });
             } catch (error) {
-                repoContainer.innerHTML = `<p style="color: #ff007f; grid-column: 1/-1; text-align: center;">Error loading projects: ${error.message}</p>`;
+                repoContainer.innerHTML = `<p style="color: #e53e3e; grid-column: 1/-1; text-align: center;">Error loading projects: ${error.message}</p>`;
             }
         }
 
