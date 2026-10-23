@@ -23,14 +23,13 @@
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
-            background-color: #ecf0f3;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             outline: none;
         }
 
         body {
             background-color: #ecf0f3;
-            color: rgb(100, 105, 115);
+            color: rgb(110, 115, 125);
             min-height: 100vh;
             padding: 25px 15px;
             line-height: 1.6;
@@ -42,13 +41,12 @@
             margin: 0 auto;
         }
 
-        /* Headings use Chewy for clean brand accent */
         h1, h2, .section-title, .repo-title, .back-btn {
             font-family: 'ChewyLocal', 'Chewy', cursive, sans-serif;
             font-weight: normal;
         }
 
-        /* Neumorphic Header Card */
+        /* Header Card */
         header {
             background-color: #ecf0f3;
             padding: 35px 20px;
@@ -59,7 +57,7 @@
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: rgb(60, 65, 75);
             letter-spacing: 1.5px;
             margin-bottom: 6px;
@@ -67,7 +65,7 @@
         }
 
         header p {
-            color: rgb(120, 125, 135);
+            color: rgb(130, 135, 145);
             font-size: 1rem;
             font-weight: 500;
         }
@@ -82,7 +80,7 @@
         }
 
         .neu-card h2 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: rgb(60, 65, 75);
             margin-bottom: 12px;
             letter-spacing: 1px;
@@ -91,7 +89,7 @@
 
         .neu-card p {
             color: rgb(110, 115, 125);
-            font-size: 0.96rem;
+            font-size: 0.95rem;
             margin-bottom: 12px;
         }
 
@@ -103,14 +101,28 @@
             color: rgb(80, 85, 95);
         }
 
-        /* Inset Ad Box */
+        /* Inset Neumorphic Ad Slot Box */
         .ad-box {
             background-color: #ecf0f3;
-            padding: 20px;
+            padding: 20px 15px;
             border-radius: 30px;
             box-shadow: inset -5px -5px 12px #ffffff, inset 5px 5px 12px rgba(0, 0, 0, 0.16);
             text-align: center;
             margin: 30px 0;
+            min-height: 120px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad-label {
+            font-size: 0.78rem;
+            color: rgb(140, 145, 155);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .section-title {
@@ -214,21 +226,24 @@
 <body>
 
     <div class="container">
+        <!-- Header -->
         <header>
             <h1>Dev Aemni</h1>
             <p>Software Developer & Open Source Engineering</p>
         </header>
 
+        <!-- Static Bio -->
         <div class="neu-card">
             <h2>About</h2>
             <p>Welcome to Dev Aemni. I am an independent developer focusing on application development, command-line system tools, and open-source utilities. This site serves as a portfolio of my work and public project repositories.</p>
             <p>Primary technology stack includes <strong>C, Kotlin, JavaScript, Node.js, and modern Web Standards</strong> with an emphasis on performance and clean architecture.</p>
         </div>
 
+        <!-- 1. Original Display Ad Unit (displayad01) -->
         <div class="ad-box">
-            <p style="font-size:0.8rem; color:rgb(140, 145, 155); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</p>
+            <span class="ad-label">Advertisement</span>
             <ins class="adsbygoogle"
-                 style="display:block"
+                 style="display:block; width:100%;"
                  data-ad-client="ca-pub-5871246629973328"
                  data-ad-slot="7396840873"
                  data-ad-format="auto"
@@ -238,6 +253,7 @@
             </script>
         </div>
 
+        <!-- Focus Areas -->
         <div class="neu-card">
             <h2>Focus Areas</h2>
             <p>• <strong>System Utilities:</strong> Developing compact, efficient C tools and automation scripts designed for Linux and mobile terminal environments.</p>
@@ -245,11 +261,27 @@
             <p>• <strong>Open Source Tools:</strong> Authoring open repositories for web development, server routing, and software utilities.</p>
         </div>
 
+        <!-- 2. Your Exact In-Article Ad Unit (slot: 1512072308) -->
+        <div class="ad-box">
+            <span class="ad-label">Sponsored Article</span>
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center; width:100%;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-5871246629973328"
+                 data-ad-slot="1512072308"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- GitHub Repositories Grid -->
         <h2 class="section-title">Projects & Repositories</h2>
         <div class="repo-grid" id="repo-container">
             <div id="loading">Loading Repositories...</div>
         </div>
 
+        <!-- Footer -->
         <footer>
             <p>&copy; 2026 Dev Aemni. All rights reserved.</p>
             <nav>
@@ -259,6 +291,7 @@
         </footer>
     </div>
 
+    <!-- GitHub Repositories Fetch Script -->
     <script>
         const username = 'dev-aemni';
         const repoContainer = document.getElementById('repo-container');
@@ -276,7 +309,7 @@
                     return;
                 }
 
-                repos.forEach(repo => {
+                repos.forEach((repo, index) => {
                     if (repo.fork) return;
 
                     const card = document.createElement('div');
@@ -300,6 +333,24 @@
                     `;
 
                     repoContainer.appendChild(card);
+
+                    // 3. Your Exact In-Feed Ad Unit (slot: 6855898321, key: -gw-3+1f-3d+2z)
+                    if ((index + 1) % 4 === 0) {
+                        const inFeedAd = document.createElement('div');
+                        inFeedAd.className = 'ad-box';
+                        inFeedAd.style.margin = '0';
+                        inFeedAd.innerHTML = `
+                            <span class="ad-label">Promoted Link</span>
+                            <ins class="adsbygoogle"
+                                 style="display:block; width:100%;"
+                                 data-ad-format="fluid"
+                                 data-ad-layout-key="-gw-3+1f-3d+2z"
+                                 data-ad-client="ca-pub-5871246629973328"
+                                 data-ad-slot="6855898321"></ins>
+                        `;
+                        repoContainer.appendChild(inFeedAd);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 });
             } catch (error) {
                 repoContainer.innerHTML = `<p style="color: #e53e3e; grid-column: 1/-1; text-align: center;">Error loading projects: ${error.message}</p>`;
