@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Aemni | Software Developer Portfolio</title>
     
-    <!-- Load Local Chewy Font & Google Fonts Fallback -->
+    <!-- Load Local Chewy & Inter Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Google AdSense Main Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5871246629973328" crossorigin="anonymous"></script>
@@ -24,23 +24,28 @@
             padding: 0px;
             box-sizing: border-box;
             background-color: #ecf0f3;
-            font-family: 'ChewyLocal', 'Chewy', cursive, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             outline: none;
         }
 
         body {
             background-color: #ecf0f3;
-            color: rgb(70, 70, 70);
+            color: rgb(100, 105, 115);
             min-height: 100vh;
             padding: 25px 15px;
-            line-height: 1.5;
-            font-size: 1.15rem;
-            letter-spacing: 0.5px;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .container {
             max-width: 850px;
             margin: 0 auto;
+        }
+
+        /* Headings use Chewy for clean brand accent */
+        h1, h2, .section-title, .repo-title, .back-btn {
+            font-family: 'ChewyLocal', 'Chewy', cursive, sans-serif;
+            font-weight: normal;
         }
 
         /* Neumorphic Header Card */
@@ -54,17 +59,17 @@
         }
 
         header h1 {
-            font-size: 3.2rem;
-            color: rgb(40, 40, 40);
+            font-size: 3rem;
+            color: rgb(60, 65, 75);
             letter-spacing: 1.5px;
             margin-bottom: 6px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), -2px -2px 4px #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12), -2px -2px 4px #ffffff;
         }
 
         header p {
-            color: rgb(90, 90, 90);
-            font-size: 1.3rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px #ffffff;
+            color: rgb(120, 125, 135);
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         /* Neumorphic Content Cards */
@@ -77,21 +82,25 @@
         }
 
         .neu-card h2 {
-            font-size: 2rem;
-            color: rgb(40, 40, 40);
+            font-size: 1.8rem;
+            color: rgb(60, 65, 75);
             margin-bottom: 12px;
             letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12), -1px -1px 2px #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px #ffffff;
         }
 
         .neu-card p {
-            color: rgb(70, 70, 70);
-            font-size: 1.15rem;
+            color: rgb(110, 115, 125);
+            font-size: 0.96rem;
             margin-bottom: 12px;
         }
 
         .neu-card p:last-child {
             margin-bottom: 0;
+        }
+
+        .neu-card strong {
+            color: rgb(80, 85, 95);
         }
 
         /* Inset Ad Box */
@@ -105,12 +114,12 @@
         }
 
         .section-title {
-            font-size: 2.2rem;
-            color: rgb(40, 40, 40);
+            font-size: 2rem;
+            color: rgb(60, 65, 75);
             margin: 30px 0 20px;
             letter-spacing: 1px;
             padding-left: 5px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12), -1px -1px 2px #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px #ffffff;
         }
 
         /* Repositories Grid */
@@ -136,14 +145,13 @@
         }
 
         .repo-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 8px;
             letter-spacing: 0.8px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px #ffffff;
         }
 
         .repo-title a {
-            color: rgb(40, 40, 40);
+            color: rgb(60, 65, 75);
             text-decoration: none;
         }
 
@@ -152,16 +160,17 @@
         }
 
         .repo-desc {
-            color: rgb(90, 90, 90);
-            font-size: 1.05rem;
+            color: rgb(120, 125, 135);
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
 
         .repo-footer {
             display: flex;
             justify-content: space-between;
-            font-size: 1rem;
-            color: rgb(120, 120, 120);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgb(140, 145, 155);
             padding-top: 10px;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
@@ -174,8 +183,8 @@
             box-shadow: -5px -5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
             text-align: center;
             margin-top: 40px;
-            color: rgb(100, 100, 100);
-            font-size: 1.1rem;
+            color: rgb(130, 135, 145);
+            font-size: 0.9rem;
         }
 
         footer nav {
@@ -183,10 +192,10 @@
         }
 
         footer nav a {
-            color: rgb(50, 50, 50);
+            color: rgb(90, 95, 105);
             text-decoration: none;
             margin: 0 8px;
-            text-shadow: 1px 1px 1px #ffffff;
+            font-weight: 500;
         }
 
         footer nav a:hover {
@@ -195,11 +204,10 @@
 
         #loading {
             text-align: center;
-            color: rgb(100, 100, 100);
-            font-size: 1.3rem;
+            color: rgb(130, 135, 145);
+            font-size: 0.95rem;
             grid-column: 1 / -1;
             padding: 20px 0;
-            text-shadow: 1px 1px 2px #ffffff;
         }
     </style>
 </head>
@@ -218,7 +226,7 @@
         </div>
 
         <div class="ad-box">
-            <p style="font-size:0.95rem; color:rgb(120, 120, 120); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 1px 1px 1px #ffffff;">Advertisement</p>
+            <p style="font-size:0.8rem; color:rgb(140, 145, 155); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</p>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5871246629973328"
@@ -264,7 +272,7 @@
                 repoContainer.innerHTML = '';
 
                 if (repos.length === 0) {
-                    repoContainer.innerHTML = '<p style="color:rgb(120,120,120); grid-column:1/-1; text-align:center;">No public repositories found.</p>';
+                    repoContainer.innerHTML = '<p style="color:rgb(140,145,155); grid-column:1/-1; text-align:center;">No public repositories found.</p>';
                     return;
                 }
 
