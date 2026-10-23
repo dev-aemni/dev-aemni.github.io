@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Aemni | Software Developer Portfolio</title>
     
-    <!-- Load Local Chewy & Inter Fonts -->
+    <!-- Google Fonts: Chewy Fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 
     <!-- Google AdSense Main Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5871246629973328" crossorigin="anonymous"></script>
 
     <style>
+        /* Custom Font Definitions */
         @font-face {
-            font-family: 'ChewyLocal';
-            src: url('/Chewy-Regular.ttf') format('truetype');
+            font-family: 'ChangaOneLocal';
+            src: url('/fonts/ChangaOne-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'PlaywriteLocal';
+            src: url('/fonts/Playwrite_IT_Trad/static/PlaywriteITTrad-Regular.ttf') format('truetype');
         }
 
         * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #ecf0f3;
+            font-family: 'ChangaOneLocal', sans-serif;
             outline: none;
         }
 
@@ -33,7 +40,7 @@
             min-height: 100vh;
             padding: 25px 15px;
             line-height: 1.6;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .container {
@@ -41,8 +48,9 @@
             margin: 0 auto;
         }
 
+        /* Headings & Titles: Chewy Font */
         h1, h2, .section-title, .repo-title, .back-btn {
-            font-family: 'ChewyLocal', 'Chewy', cursive, sans-serif;
+            font-family: 'Chewy', cursive, sans-serif;
             font-weight: normal;
         }
 
@@ -57,7 +65,7 @@
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: rgb(60, 65, 75);
             letter-spacing: 1.5px;
             margin-bottom: 6px;
@@ -66,8 +74,8 @@
 
         header p {
             color: rgb(130, 135, 145);
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 1.1rem;
+            font-family: 'ChangaOneLocal', sans-serif;
         }
 
         /* Neumorphic Content Cards */
@@ -80,7 +88,7 @@
         }
 
         .neu-card h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: rgb(60, 65, 75);
             margin-bottom: 12px;
             letter-spacing: 1px;
@@ -89,8 +97,9 @@
 
         .neu-card p {
             color: rgb(110, 115, 125);
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 12px;
+            font-family: 'ChangaOneLocal', sans-serif;
         }
 
         .neu-card p:last-child {
@@ -101,7 +110,7 @@
             color: rgb(80, 85, 95);
         }
 
-        /* Inset Neumorphic Ad Slot Box */
+        /* Inset Ad Box Container */
         .ad-box {
             background-color: #ecf0f3;
             padding: 20px 15px;
@@ -118,15 +127,16 @@
         }
 
         .ad-label {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: rgb(140, 145, 155);
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-family: 'ChangaOneLocal', sans-serif;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: rgb(60, 65, 75);
             margin: 30px 0 20px;
             letter-spacing: 1px;
@@ -157,7 +167,7 @@
         }
 
         .repo-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 8px;
             letter-spacing: 0.8px;
         }
@@ -173,41 +183,45 @@
 
         .repo-desc {
             color: rgb(120, 125, 135);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 15px;
+            font-family: 'ChangaOneLocal', sans-serif;
         }
 
         .repo-footer {
             display: flex;
             justify-content: space-between;
-            font-size: 0.82rem;
-            font-weight: 500;
+            font-size: 0.85rem;
             color: rgb(140, 145, 155);
             padding-top: 10px;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
+            font-family: 'ChangaOneLocal', sans-serif;
         }
 
-        /* Footer */
+        /* Footer: Playwrite Font */
         footer {
             background-color: #ecf0f3;
-            padding: 22px;
+            padding: 25px;
             border-radius: 30px;
             box-shadow: -5px -5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
             text-align: center;
             margin-top: 40px;
-            color: rgb(130, 135, 145);
-            font-size: 0.9rem;
+            color: rgb(120, 125, 135);
+            font-size: 0.85rem;
+        }
+
+        footer p, footer nav, footer nav a {
+            font-family: 'PlaywriteLocal', cursive, sans-serif !important;
         }
 
         footer nav {
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         footer nav a {
-            color: rgb(90, 95, 105);
+            color: rgb(80, 85, 95);
             text-decoration: none;
             margin: 0 8px;
-            font-weight: 500;
         }
 
         footer nav a:hover {
@@ -217,9 +231,10 @@
         #loading {
             text-align: center;
             color: rgb(130, 135, 145);
-            font-size: 0.95rem;
+            font-size: 1rem;
             grid-column: 1 / -1;
             padding: 20px 0;
+            font-family: 'ChangaOneLocal', sans-serif;
         }
     </style>
 </head>
@@ -239,7 +254,7 @@
             <p>Primary technology stack includes <strong>C, Kotlin, JavaScript, Node.js, and modern Web Standards</strong> with an emphasis on performance and clean architecture.</p>
         </div>
 
-        <!-- 1. Original Display Ad Unit (displayad01) -->
+        <!-- Display Ad Unit -->
         <div class="ad-box">
             <span class="ad-label">Advertisement</span>
             <ins class="adsbygoogle"
@@ -261,7 +276,7 @@
             <p>• <strong>Open Source Tools:</strong> Authoring open repositories for web development, server routing, and software utilities.</p>
         </div>
 
-        <!-- 2. Your Exact In-Article Ad Unit (slot: 1512072308) -->
+        <!-- In-Article Ad Unit -->
         <div class="ad-box">
             <span class="ad-label">Sponsored Article</span>
             <ins class="adsbygoogle"
@@ -281,7 +296,7 @@
             <div id="loading">Loading Repositories...</div>
         </div>
 
-        <!-- Footer -->
+        <!-- Footer (Uses Playwrite font) -->
         <footer>
             <p>&copy; 2026 Dev Aemni. All rights reserved.</p>
             <nav>
@@ -334,7 +349,7 @@
 
                     repoContainer.appendChild(card);
 
-                    // 3. Your Exact In-Feed Ad Unit (slot: 6855898321, key: -gw-3+1f-3d+2z)
+                    // In-Feed Ad Unit
                     if ((index + 1) % 4 === 0) {
                         const inFeedAd = document.createElement('div');
                         inFeedAd.className = 'ad-box';

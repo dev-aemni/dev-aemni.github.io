@@ -7,12 +7,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 
     <style>
         @font-face {
-            font-family: 'ChewyLocal';
-            src: url('/Chewy-Regular.ttf') format('truetype');
+            font-family: 'ChangaOneLocal';
+            src: url('/fonts/ChangaOne-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'PlaywriteLocal';
+            src: url('/fonts/Playwrite_IT_Trad/static/PlaywriteITTrad-Regular.ttf') format('truetype');
         }
 
         * {
@@ -20,7 +25,7 @@
             padding: 0px;
             box-sizing: border-box;
             background-color: #ecf0f3;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'ChangaOneLocal', sans-serif;
             outline: none;
         }
 
@@ -30,7 +35,7 @@
             min-height: 100vh;
             padding: 25px 15px;
             line-height: 1.6;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .container {
@@ -39,7 +44,7 @@
         }
 
         h1, h2, .back-btn {
-            font-family: 'ChewyLocal', 'Chewy', cursive, sans-serif;
+            font-family: 'Chewy', cursive, sans-serif;
             font-weight: normal;
         }
 
@@ -79,7 +84,8 @@
 
         header p {
             color: rgb(130, 135, 145);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            font-family: 'ChangaOneLocal', sans-serif;
         }
 
         .neu-card {
@@ -102,16 +108,15 @@
             margin-top: 0;
         }
 
-        .neu-card p {
+        .neu-card p, .neu-card ul, .neu-card li {
             color: rgb(110, 115, 125);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             margin-bottom: 14px;
+            font-family: 'ChangaOneLocal', sans-serif;
         }
 
         .neu-card ul {
             margin-left: 20px;
-            margin-bottom: 14px;
-            color: rgb(110, 115, 125);
         }
 
         .neu-card li {
@@ -120,22 +125,30 @@
 
         footer {
             background-color: #ecf0f3;
-            padding: 22px;
+            padding: 25px;
             border-radius: 30px;
             box-shadow: -5px -5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
             text-align: center;
             margin-top: 40px;
-            color: rgb(130, 135, 145);
-            font-size: 0.9rem;
+            color: rgb(120, 125, 135);
+            font-size: 0.85rem;
         }
 
-        footer a {
-            color: rgb(90, 95, 105);
+        footer p, footer nav, footer nav a {
+            font-family: 'PlaywriteLocal', cursive, sans-serif !important;
+        }
+
+        footer nav {
+            margin-top: 10px;
+        }
+
+        footer nav a {
+            color: rgb(80, 85, 95);
             text-decoration: none;
             margin: 0 8px;
         }
 
-        footer a:hover {
+        footer nav a:hover {
             text-decoration: underline;
         }
     </style>
@@ -160,7 +173,7 @@
 
             <h2>3. Google DoubleClick DART Cookie & AdSense Policies</h2>
             <p>Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to dev-aemni.github.io and other sites on the internet.</p>
-            <p>Visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at: <a href="https://policies.google.com/technologies/ads" target="_blank" style="color:rgb(80,85,95); font-weight:500;">https://policies.google.com/technologies/ads</a>.</p>
+            <p>Visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at: <a href="https://policies.google.com/technologies/ads" target="_blank" style="color:rgb(80,85,95);">https://policies.google.com/technologies/ads</a>.</p>
 
             <h2>4. Our Advertising Partners</h2>
             <p>Some of the advertisers on our site may use cookies and web beacons. Our advertising partners include Google AdSense. Each of our advertising partners has their own Privacy Policy for their policies on user data.</p>
