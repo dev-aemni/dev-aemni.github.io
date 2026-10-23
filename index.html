@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Aemni | Software Developer Portfolio</title>
     
+    <!-- Load Local Chewy Font & Google Fonts Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+
     <!-- Google AdSense Main Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5871246629973328" crossorigin="anonymous"></script>
 
     <style>
+        @font-face {
+            font-family: 'ChewyLocal';
+            src: url('/Chewy-Regular.ttf') format('truetype');
+        }
+
         * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
             background-color: #ecf0f3;
-            font-family: sans-serif;
+            font-family: 'ChewyLocal', 'Chewy', cursive, sans-serif;
             outline: none;
         }
 
@@ -23,7 +33,9 @@
             color: rgb(70, 70, 70);
             min-height: 100vh;
             padding: 25px 15px;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
         }
 
         .container {
@@ -41,42 +53,41 @@
             margin-bottom: 30px;
         }
 
-        /* Extruded/Raised Text Depth */
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
             color: rgb(40, 40, 40);
-            font-weight: bold;
+            letter-spacing: 1.5px;
             margin-bottom: 6px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), -2px -2px 4px #ffffff;
         }
 
         header p {
             color: rgb(90, 90, 90);
-            font-size: 1rem;
+            font-size: 1.3rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px #ffffff;
         }
 
         /* Neumorphic Content Cards */
         .neu-card {
             background-color: #ecf0f3;
-            padding: 25px;
+            padding: 28px;
             border-radius: 30px;
             box-shadow: -5px -5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
             margin-bottom: 30px;
         }
 
         .neu-card h2 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: rgb(40, 40, 40);
-            margin-bottom: 10px;
-            font-weight: bold;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12), -1px -1px 2px #ffffff;
         }
 
         .neu-card p {
             color: rgb(70, 70, 70);
-            font-size: 0.98rem;
-            margin-bottom: 10px;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
         }
 
         .neu-card p:last-child {
@@ -94,10 +105,10 @@
         }
 
         .section-title {
-            font-size: 1.6rem;
+            font-size: 2.2rem;
             color: rgb(40, 40, 40);
             margin: 30px 0 20px;
-            font-weight: bold;
+            letter-spacing: 1px;
             padding-left: 5px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12), -1px -1px 2px #ffffff;
         }
@@ -125,9 +136,9 @@
         }
 
         .repo-title {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.5rem;
             margin-bottom: 8px;
+            letter-spacing: 0.8px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px #ffffff;
         }
 
@@ -142,15 +153,14 @@
 
         .repo-desc {
             color: rgb(90, 90, 90);
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             margin-bottom: 15px;
         }
 
         .repo-footer {
             display: flex;
             justify-content: space-between;
-            font-size: 0.8rem;
-            font-weight: bold;
+            font-size: 1rem;
             color: rgb(120, 120, 120);
             padding-top: 10px;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -165,7 +175,7 @@
             text-align: center;
             margin-top: 40px;
             color: rgb(100, 100, 100);
-            font-size: 0.88rem;
+            font-size: 1.1rem;
         }
 
         footer nav {
@@ -176,7 +186,6 @@
             color: rgb(50, 50, 50);
             text-decoration: none;
             margin: 0 8px;
-            font-weight: bold;
             text-shadow: 1px 1px 1px #ffffff;
         }
 
@@ -187,8 +196,7 @@
         #loading {
             text-align: center;
             color: rgb(100, 100, 100);
-            font-size: 1rem;
-            font-weight: bold;
+            font-size: 1.3rem;
             grid-column: 1 / -1;
             padding: 20px 0;
             text-shadow: 1px 1px 2px #ffffff;
@@ -210,7 +218,7 @@
         </div>
 
         <div class="ad-box">
-            <p style="font-size:11px; color:rgb(120, 120, 120); margin-bottom: 8px; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; text-shadow: 1px 1px 1px #ffffff;">Advertisement</p>
+            <p style="font-size:0.95rem; color:rgb(120, 120, 120); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 1px 1px 1px #ffffff;">Advertisement</p>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5871246629973328"
