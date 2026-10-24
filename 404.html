@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/error/404/">
     <script>
-        window.location.href = "/error/404/";
+        // Check if path requested a specific error code, otherwise default to 404
+        const path = window.location.pathname;
+        const match = path.match(/\/(4\d\d|5\d\d)\/?$/);
+        const code = match ? match[1] : '404';
+        window.location.replace("/error/?code=" + code);
     </script>
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="/error/404/">click here</a>.</p>
+    <p>Redirecting to error page... <a href="/error/?code=404">Click here</a></p>
 </body>
 </html>
